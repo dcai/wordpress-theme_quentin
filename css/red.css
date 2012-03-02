@@ -1,0 +1,6 @@
+body { background: #5B211A url(../images/quentin-body-red.jpg) repeat-x center top;}
+.wrapper {	background: #F2E2C1 url(../images/quentin-bg.jpg) repeat-y center top; border: 10px solid #411213; }
+a {color:#5B211A;text-decoration:none;}
+.navigation a:hover, .navigation a:hover  {
+	background-color:#4B1813;
+}

@@ -21,8 +21,8 @@ body {
     line-height:1.5;
     font-size:100%;
     color:#000;
-    font-family: 'Droid Serif', arial, serif;
-    /*font-family: "Hoefler Text", Georgia, "Times New Roman", Times, serif;*/
+    font-family: "Hoefler Text", Georgia, "Times New Roman", Times, serif;
+    /*font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif; */
 }
 table {border-collapse:separate;border-spacing:0;}
 caption, th, td {text-align:left;font-weight:normal;}
@@ -67,14 +67,15 @@ sup, sub {line-height:0;}
 abbr, acronym {border-bottom:1px dotted #666;}
 address {margin:0 0 1.5em;font-style:italic;}
 del {color:#666;}
-pre {
+pre, code {
     white-space:pre-wrap;
+    font-size: 11px;
     margin:1.5em 0;
     padding-left: 1.5em;
     border-left: 3px solid #A99880;
 }
 pre, code, tt {
-    font:1em 'andale mono', 'lucida console', monospace;
+    font-family:'andale mono', 'lucida console', monospace;
     line-height:1.5;
 }
 li ul, li ol {margin:0 1.5em;}
@@ -141,7 +142,7 @@ p.byline {
 }
 
 .entry-content { 	 	 	
-    text-align: justify;
+    text-align: left;
 }
 
 p.credit, .archive-meta {

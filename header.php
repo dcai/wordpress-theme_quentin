@@ -6,15 +6,8 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url') ?>" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/layout.css" media="screen, projection" />
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/red.css" />
     <!--[if IE]><link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie.css" type="text/css" media="screen, projection"><![endif]-->
-    <!--[if lte IE 6]>
-        <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/css/ie6.css" type="text/css" media="screen" />
-    <![endif]-->
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/css/print.css" media="print" />
     <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url') ?>"  />
-    <link rel="alternate" type="application/rss+xml" href="<?php bloginfo('comments_rss2_url') ?>"  />
     <link rel="pingback" href="<?php bloginfo('pingback_url') ?>" />
     <?php wp_head()  ?>
 </head>

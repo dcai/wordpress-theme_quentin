@@ -1,0 +1,55 @@
+/*
+THEME NAME: Quentin
+THEME URI: http://pikemurdy.com/quentin/
+DESCRIPTION: An organic template that speaks in the vernacular of books
+VERSION: 2.0.1
+AUTHOR: Mike Purdy
+AUTHOR URI: http://pikemurdy.com/
+TAGS: pikemurdy, widgets, old fashioned, paper, two-column, simple
+
+"When the shadow of the sash appeared on the curtains it was between seven and eight oclock and then I 
+was in time again, hearing the watch. It was Grandfather's and when Father gave it to me he said I give 
+you the mausoleum of all hope and desire; it’s rather excruciating-ly apt that you will use it to gain the 
+reducto absurdum of all human experience which can fit your individual needs no better than it fitted his 
+or his father's. I give it to you not that you may remember time, but that you might forget it now and then 
+for a moment and not spend all your breath trying to conquer it. Because no battle is ever won he said.
+They are not even fought. The field only reveals to man his own folly and despair, and victory is an 
+illusion of philosophers and fools."
+--Quentin Compson, from "The Sound and the Fury"
+*/
+
+/* including for compatibility */
+/* The rest of the styles for this theme can be found in the CSS directory */
+.alignleft {
+    float:left;
+    margin-right:1em;
+    margin-bottom:1em;
+}
+.alignright {
+    float:right;
+    margin-left:1em;
+    margin-bottom:1em;
+}
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wp-caption {
+    border-bottom: 2px solid #877C67;
+    text-align: left;
+    padding-top: 4px;
+    margin: 10px;
+}
+.wp-caption img {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
+.wp-caption p.wp-caption-text, .entry-caption {
+    font-size: 0.8em;
+    padding: 0 4px 5px 0;
+    color: #877C67;
+    margin: 0.5em 0 0 0;
+    font-family: "lucida grande", "trebuchet ms", georgia, times, serif;
+}

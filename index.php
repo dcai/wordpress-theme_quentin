@@ -25,7 +25,7 @@
 <?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'quentin' ) . '&after=</div>') ?>
 </div>
 
-<?php // print_post_meta(); ?>
+<?php  // print_post_meta(); ?>
 
 <!--<img src="<?php bloginfo('template_directory'); ?>/images/printer.gif" width="102" height="27" class="pmark" alt=" " />-->
 <img src="<?php bloginfo('template_directory'); ?>/images/ornament-archaic.png" width="71" height="23" class="pmark" alt=" " />

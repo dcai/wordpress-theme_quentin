@@ -13,18 +13,7 @@
 <?php the_excerpt(__( 'Read More <span class="meta-nav">&raquo;</span>', 'quentin' )) ?>
 
 				</div>
-				<div class="entry-meta">
-					<span class="author vcard"><?php printf( __( 'By %s', 'quentin' ), '<a class="url fn n" href="' . get_author_link( false, $authordata->ID, $authordata->user_nicename ) . '" title="' . sprintf( __( 'View all posts by %s', 'quentin' ), $authordata->display_name ) . '">' . get_the_author() . '</a>' ) ?></span> Posted on <abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO') ?>"><?php unset($previousday); printf( __( '%1$s &#8211; %2$s', 'quentin' ), the_date( '', '', '', false ), get_the_time() ) ?></abbr>
-					<span class="meta-sep">|</span>
-					<span class="cat-links"><?php printf( __( 'Posted in %s', 'quentin' ), get_the_category_list(', ') ) ?></span>
-					<span class="meta-sep">|</span>
-<?php if ( $tag_ur_it = quentin_tag_ur_it(', ') ) : // Returns tags other than the one queried ?>
-					<span class="tag-links"><?php printf( __( 'Also tagged %s', 'quentin' ), $tag_ur_it ) ?></span>
-					<span class="meta-sep">|</span>
-<?php endif; ?>
-<?php edit_post_link( __( 'Edit', 'quentin' ), "\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t<span class=\"meta-sep\">|</span>\n" ) ?>
-					<span class="comments-link"><?php comments_popup_link( __( 'Comments (0)', 'quentin' ), __( 'Comments (1)', 'quentin' ), __( 'Comments (%)', 'quentin' ) ) ?></span>
-				</div>
+<?php print_post_meta(); ?>
 			</div><!-- .post -->
 
 <?php endwhile; ?>

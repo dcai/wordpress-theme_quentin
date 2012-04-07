@@ -1,5 +1,5 @@
 <?php
-if (post_password_required()) { 	 	 	
+if (post_password_required()) {
     echo "<p class='nocomments'>This post is password protected. Enter the password to view comments.</p>";
     return;
 }
@@ -15,7 +15,6 @@ if (post_password_required()) {
 	<ol class="commentlist">
 	<?php wp_list_comments(); ?>
 	</ol>
-<hr />
 
 	<div class="navigation">
 		<div class="alignleft"><?php previous_comments_link() ?></div>
@@ -67,9 +66,7 @@ if (post_password_required()) {
 
 <?php endif; ?>
 
-<!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
-
-<p><textarea name="comment" id="comment" cols="100%" rows="10" tabindex="4"></textarea></p>
+<p><textarea name="comment" id="comment" rows="10" tabindex="4"></textarea></p>
 
 <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <?php comment_id_fields(); ?>

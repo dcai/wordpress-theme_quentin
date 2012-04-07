@@ -16,6 +16,6 @@
 <div class="wrapper">
     <div class="container">
 	<div id="header">
-            <h1 id="blog-title"><a href="<?php get_option('home') ?>/" title="<?php echo esc_html( get_option('name'), 1 ) ?>" rel="home"><?php bloginfo('name') ?></a></h1>
+            <h1 id="blog-title"><a href="<?php echo esc_url( home_url() ); ?>/" title="<?php echo esc_html( get_option('name'), 1 ) ?>" rel="home"><?php bloginfo('name') ?></a></h1>
             <h3 class="description"><?php bloginfo('description') ?></h3>
 	</div><!-- header -->

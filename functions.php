@@ -11,16 +11,16 @@
 // **********************************************************************
 // This program is distributed in the hope that it will be useful, but
 // WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 // **********************************************************************
 
-//  Special NOTE: Much of this file is taken from the great Sandbox theme. Props to Andy and Scott: http://www.plaintxt.org/themes/sandbox/
-//  Also special thanks to Dan for the Admin section help: http://blog.themeforest.net/WordPress/create-an-options-page-for-your-WordPress-theme/
-
 function print_post_meta($date = true, $category = true, $tag = true, $comments = true, $editlink = true) {
-    echo "<div class='meta'>";
+    global $authordata;
+    echo "<div class='entry-meta'>";
+    echo "<span class='author vcard'>" . sprintf( __( 'By %s', 'quentin' ), '<a class="url fn n" href="' . get_author_posts_url( false, $authordata->ID, $authordata->user_nicename ) . '" title="' . sprintf( __( 'View all posts by %s', 'quentin' ), $authordata->display_name ) . '">' . get_the_author() . '</a>' ) . "</span>";
 
     if ($date) {
+        echo " • ";
         echo "<abbr class='published'>";
         echo sprintf(__( '%1$s &#8211; %2$s', 'quentin' ), the_date( '', '', '', false ), get_the_time());
         echo "</abbr>";
@@ -31,17 +31,17 @@ function print_post_meta($date = true, $category = true, $tag = true, $comments 
         printf(__( 'Posted in %s', 'quentin' ), get_the_category_list(', '));
         echo "</span>";
     }
+    if ($tag && get_the_tag_list()) {
+        echo " • ";
+        the_tags(  '<span class="tag-links">Tagged ', ", ", "</span>" );
+    }
     if ($comments) {
         echo " • ";
         echo "<span class='comments-link'>";
         comments_popup_link( __( 'Comments (0)', 'quentin' ), __( 'Comments (1)', 'quentin' ), __( 'Comments (%)', 'quentin' ) );
         echo "</span>";
     }
-    if ($tag) {
-        echo " • ";
-        the_tags(  '<span class="tag-links">Tagged ', ", ", "</span>" ); 
-    }
-    if ($editlink) {
+    if ($editlink && get_edit_post_link()) {
         echo " • ";
         edit_post_link( __( 'Edit', 'quentin' ), "<span class=\"edit-link\">", "</span>" );
     }
@@ -65,15 +65,15 @@ function print_full_post_meta() {
     get_post_comments_feed_link()
     );
 
-    if ( ('open' == $post->comment_status) && ('open' == $post->ping_status) ) { // Comments and trackbacks open 
+    if ( ('open' == $post->comment_status) && ('open' == $post->ping_status) ) { // Comments and trackbacks open
         printf('<a class="comment-link" href="#respond" title="Post a comment">Post a comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.',
             get_trackback_url() );
-    } elseif ( !('open' == $post->comment_status) && ('open' == $post->ping_status) ) { // Only trackbacks open 
+    } elseif ( !('open' == $post->comment_status) && ('open' == $post->ping_status) ) { // Only trackbacks open
         printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'quentin' ), get_trackback_url() );
-    } elseif ( ('open' == $post->comment_status) && !('open' == $post->ping_status) ) { // Only comments open 
+    } elseif ( ('open' == $post->comment_status) && !('open' == $post->ping_status) ) { // Only comments open
          _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'quentin' );
-    } elseif ( !('open' == $post->comment_status) && !('open' == $post->ping_status) ) { // Comments and trackbacks closed 
-        _e( 'Both comments and trackbacks are currently closed.', 'quentin' ); 
+    } elseif ( !('open' == $post->comment_status) && !('open' == $post->ping_status) ) { // Comments and trackbacks closed
+        _e( 'Both comments and trackbacks are currently closed.', 'quentin' );
     }
     edit_post_link( __( 'Edit', 'quentin' ), '<span class="edit-link">', "</span>" );
 
@@ -452,9 +452,9 @@ add_filter( 'archive_meta', 'convert_chars' );
 add_filter( 'archive_meta', 'wpautop' );
 
 // EDITS THE EXCEPT
-function gpp_excerpt($text) { 
-    return str_replace('[...]', '<a href="'.get_permalink().'">Continue Reading &rarr;</a>', $text); 
-} 
+function gpp_excerpt($text) {
+    return str_replace('[...]', '<a href="'.get_permalink().'">Continue Reading &rarr;</a>', $text);
+}
 
 add_filter('the_excerpt', 'gpp_excerpt');
 
